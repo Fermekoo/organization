@@ -6,6 +6,6 @@
     4. run command "php artisan migrate"
     5. run command "php artisan db:seed"
     6. run command "php artisan storage:link"
+    7. admin email: admin@admin.com , password : admin123
 
-# DEMO
     [DEMO](https://organization.dandifermeko.com)
