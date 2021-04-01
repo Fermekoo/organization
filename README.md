@@ -6,3 +6,6 @@
     4. run command "php artisan migrate"
     5. run command "php artisan db:seed"
     6. run command "php artisan storage:link"
+
+# DEMO
+    [DEMO](https://organization.dandifermeko.com)
