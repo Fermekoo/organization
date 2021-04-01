@@ -52,7 +52,7 @@
 							<a href="{{ route('org.add-manager',$organization->id) }}" class="h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">Manager</a>
 							@endif
 							@if(auth()->user()->manager && auth()->user()->manager->id == $organization->account_manager_id)
-							<a href="{{ route('org.detail',$organization->id) }}" class="h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">Delete</a>
+							<a href="{{ route('org.delete',$organization->id) }}" class="h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">Delete</a>
 							@endif
 							</td>
 						</tr>

@@ -27,6 +27,7 @@ Route::group(['prefix' => 'organization','middleware' => ['auth']], function(){
     Route::post('/create',[OrganizationController::class, 'store'])->name('org.store');
     Route::get('/{id}/detail',[OrganizationController::class, 'detail'])->name('org.detail');
     Route::post('/{id}/detail',[OrganizationController::class, 'update'])->name('org.update');
+    Route::get('/{id}/delete',[OrganizationController::class, 'delete'])->name('org.delete');
     Route::get('/{id}/assign-manager',[OrganizationController::class, 'addManager'])->middleware(['admin'])->name('org.add-manager');
     Route::post('/{id}/assign-manager',[OrganizationController::class, 'assignManager'])->middleware(['admin'])->name('org.assign-manager');
 });

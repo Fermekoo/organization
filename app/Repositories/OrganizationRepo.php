@@ -99,4 +99,12 @@ class OrganizationRepo
 
         return $org;
     }
+
+    public function delete($id)
+    {
+        
+        if(!auth()->user()->manager) return false;
+
+        return $org = Organization::where(['id' => $id, 'account_manager_id' => auth()->user()->manager->id])->delete();
+    }
 }

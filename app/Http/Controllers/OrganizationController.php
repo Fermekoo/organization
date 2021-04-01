@@ -111,6 +111,17 @@ class OrganizationController extends Controller
             return back()->with('error',$e->getMessage());
         }
 
-        return redirect()->route('org.index')->with('success','Account Manager Added Successfully');
+        return redirect()->route('org.index')->with('success','Organization Added Successfully');
+    }
+
+    public function delete($id)
+    {
+        try {
+            $this->organization->delete($id);
+        } catch (\Exception $e) {
+            return back()->with('error',$e->getMessage());
+        }
+
+        return redirect()->route('org.index')->with('success','Organization Deleted Successfully');
     }
 }
