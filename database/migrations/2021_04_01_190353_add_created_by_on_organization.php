@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFieldUserTypeOnUser extends Migration
+class AddCreatedByOnOrganization extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddFieldUserTypeOnUser extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('user_type')->after('password')->default('User')->comment('Account-Manager, Admin, User');
+        Schema::table('organizations', function (Blueprint $table) {
+            $table->unsignedInteger('created_by')->nullable()->after('logo');
         });
     }
 
@@ -25,7 +25,7 @@ class AddFieldUserTypeOnUser extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('organizations', function (Blueprint $table) {
             //
         });
     }

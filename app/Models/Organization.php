@@ -10,7 +10,7 @@ class Organization extends Model
     use SoftDeletes;
 
     protected $table    = 'organizations';
-    protected $fillable = ['account_manager_id','name','email','phone','website','logo'];
+    protected $fillable = ['account_manager_id','name','email','phone','website','logo','created_by'];
 
     public function manager()
     {
@@ -20,5 +20,10 @@ class Organization extends Model
     public function pic()
     {
         return $this->hasMany(PIC::class, 'organization_id');
+    }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
     }
 }

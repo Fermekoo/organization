@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Create Organization
+            Add <strong>{{ $organization->name }}</strong> PIC
         </h2>
     </x-slot>
 
@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     @include('alert')
-                    <form action="{{ route('org.store') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
+                    <form action="{{ route('pic.store', $organization->id) }}" method="POST" autocomplete="off" enctype="multipart/form-data">
                         @csrf
                         <div class="shadow sm:rounded-md sm:overflow-hidden">
                         <div class="px-4 py-5 bg-white space-y-6 sm:p-">
@@ -39,20 +39,13 @@
                                     <input type="email" name="email" id="email" value="{{ old('email') }}" autocomplete="off" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                     </div>
                                 </div>
+                                
                                 <div class="col-span-3 sm:col-span-2">
-                                    <label for="website" class="block text-sm font-medium text-gray-700">
-                                    Website
+                                    <label for="avatar" class="block text-sm font-medium text-gray-700">
+                                    Avatar
                                     </label>
                                     <div class="mt-1 flex rounded-md shadow-sm">
-                                    <input type="text" name="website" id="website" value="{{ old('website') }}" autocomplete="off" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
-                                    </div>
-                                </div>
-                                <div class="col-span-3 sm:col-span-2">
-                                    <label for="logo" class="block text-sm font-medium text-gray-700">
-                                    Logo
-                                    </label>
-                                    <div class="mt-1 flex rounded-md shadow-sm">
-                                    <input type="file" name="logo" id="logo" autocomplete="off" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+                                    <input type="file" name="avatar" id="avatar" autocomplete="off" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                     </div>
                                 </div>
                             </div>

@@ -10,7 +10,7 @@ class PIC extends Model
     use SoftDeletes;
 
     protected $table    = 'organization_pic';
-    protected $fillable = ['organization_id','name','email','avatar'];
+    protected $fillable = ['organization_id','name','email','phone','avatar'];
 
     public function organization()
     {
